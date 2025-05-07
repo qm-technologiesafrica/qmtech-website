@@ -5,16 +5,27 @@
 @tailwind utilities;
 
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-	font-family: "DM Sans", sans-serif;
-	background: #fff;
-	color: #5a5a5a;
+  font-family: "DM Sans", sans-serif;
+  background: #fff;
+  color: #5a5a5a;
 }
 
 .space {
-	font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@layer utilities {
+  .container {
+    @apply w-[92%] m-auto max-w-[1650px];
+  }
+}
+
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
 }

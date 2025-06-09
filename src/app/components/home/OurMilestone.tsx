@@ -17,12 +17,12 @@ const OurMilestone = () => {
               <span className="text-secondary-400 italic"> New Horizons!</span>
             </h1>
             <h4 className="leading-[3.5rem] text-[18px] md:text-[24px] text-neutral-200 md:text-start text-center  ">
-              With our innovative solutions and commitment to excellence, we're
-              breaking new ground and venturing into uncharted territories,
-              bringing our expertise and cutting-edge technology to even more
-              businesses across the continent. Stay tuned as we continue to push
-              boundaries, explore new opportunities, and shape the future of
-              tech in Africa!
+              With our innovative solutions and commitment to excellence,
+              we&apos;re breaking new ground and venturing into uncharted
+              territories, bringing our expertise and cutting-edge technology to
+              even more businesses across the continent. Stay tuned as we
+              continue to push boundaries, explore new opportunities, and shape
+              the future of tech in Africa!
             </h4>
             <div className="flex md:flex-row flex-col gap-10">
               <div className=" flex flex-col gap-10 items-center">

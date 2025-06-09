@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const OurProducts = () => {
@@ -20,9 +21,13 @@ const OurProducts = () => {
             specific subjects like history, science, sports, entertainment, and
             more.
           </h4>
-          <div className="bg-primary-900 text-white w-fit px-6 py-3 border border-secondary-500 hover:shadow-md hover:shadow-primary-900 duration-500 delay-100 cursor-pointer  rounded-full  items-center gap-2">
+          <Link
+            href={"https://www.quizmoney.ng/"}
+            target="_blank"
+            className="bg-primary-900 text-white w-fit px-6 py-3 border border-secondary-500 hover:shadow-md hover:shadow-primary-900 duration-500 delay-100 cursor-pointer  rounded-full  items-center gap-2"
+          >
             View Product
-          </div>
+          </Link>
           <Image
             src={"/curve-line.svg"}
             alt="curve line"

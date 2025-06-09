@@ -20,8 +20,8 @@ const Hero = () => {
             </h1>
 
             <p className="text-center text-lg  sm:text-xl md:text-2xl font-light ">
-              Empowering Africa's ecosystem by providing technologically driven{" "}
-              <br className="hidden md:block" />
+              Empowering Africa&apos;s ecosystem by providing technologically
+              driven <br className="hidden md:block" />
               solution to businesses.
             </p>
 

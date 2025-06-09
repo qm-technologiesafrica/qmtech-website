@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div>
             <p className="text-white text-xl md:text-2xl">
-              Let's explore available opportunities or create{" "}
+              Let&apos;s explore available opportunities or create{" "}
               <br className="hidden md:block" /> bespoke solutions to serve your
               business needs.
             </p>

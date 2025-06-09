@@ -13,7 +13,9 @@ const WhoWeAre = () => {
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl text-black font-semibold  md:text-start text-center">
               Pioneering{" "}
-              <span className="text-primary-800 italic">QM Technology's</span>{" "}
+              <span className="text-primary-800 italic">
+                QM Technology&apos;s
+              </span>{" "}
               Journey
             </h1>
             <h4 className="leading-[3.5rem] text-[18px] md:text-[24px] md:text-start text-center  ">
@@ -29,11 +31,15 @@ const WhoWeAre = () => {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center h-[500px] lg:h-full">
-            <video
-              src="/hero.mp4"
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/uvX8EJ6RFcU?autoplay=1&loop=1&playlist=uvX8EJ6RFcU&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1"
+              title="6 June 2025"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               className="w-full h-full object-cover rounded-3xl"
-              controls
-            ></video>
+              frameBorder="0"
+            ></iframe>
           </div>
         </div>
       </div>

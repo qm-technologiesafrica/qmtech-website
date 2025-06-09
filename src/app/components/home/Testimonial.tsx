@@ -93,13 +93,14 @@ const Testimonial = () => {
                       .fill(0)
                       .map((_, idx) => (
                         <BsStarFill
+                          key={idx}
                           size={24}
                           color={testimonial.rating > idx ? "orange" : "#ccc"}
                         />
                       ))}
                   </div>
                   <p className="flex-1 text-lg text-zinc-500">
-                    "{testimonial.body}"
+                    &ldquo;{testimonial.body}&rdquo;
                   </p>
 
                   <div className=" flex gap-6">

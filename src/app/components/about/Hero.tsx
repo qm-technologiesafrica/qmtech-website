@@ -17,7 +17,9 @@ const Hero = () => {
 
             <h1 className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-center text-black lg:leading-[90px] ">
               Empowering{" "}
-              <span className="text-primary-800 italic">Africa's Tech</span>{" "}
+              <span className="text-primary-800 italic">
+                Africa&apos;s Tech
+              </span>{" "}
               <br className="hidden md:block" /> Ecosystem.
             </h1>
 
@@ -31,11 +33,20 @@ const Hero = () => {
           <div className="container flex items-center flex-col">
             <div className="flex items-center gap-10 w-[80%] ">
               <div className=" bg-white md:h-[500px] w-full h-[164px] rounded-[20px] translate-y-[-30%] overflow-hidden flex">
-                <video
-                  src="/hero.mp4"
+                {/* <video
+                  src="https://www.youtube.com/shorts/qm5GnrT8sww"
                   className="w-full h-full object-cover"
                   controls
-                ></video>
+                ></video> */}
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/uvX8EJ6RFcU?autoplay=1&loop=1&playlist=uvX8EJ6RFcU&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1"
+                  title="6 June 2025"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  className="w-full h-full object-cover"
+                  frameBorder="0"
+                ></iframe>
               </div>
             </div>
             <div className="flex flex-col justify-center space-y-5">
@@ -44,7 +55,9 @@ const Hero = () => {
               </p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl text-black font-semibold  md:text-start text-center">
                 Pioneering{" "}
-                <span className="text-primary-800 italic">QM Technology's</span>{" "}
+                <span className="text-primary-800 italic">
+                  QM Technology&apos;s
+                </span>{" "}
                 <br className="hidden md:block" />
                 Journey
               </h1>
@@ -61,10 +74,10 @@ const Hero = () => {
                 is committed to delivering solutions that exceed expectations
                 and drive growth. At QM Tech Solutions, we believe in the power
                 of technology to transform businesses and drive positive change.
-                That's why we're not just in the business of creating software –
-                we're in the business of making an impact. By empowering
-                businesses with innovative technology solutions, we aim to
-                foster growth, create opportunities, and drive economic
+                That&apos;s why we&apos;re not just in the business of creating
+                software – we&apos;re in the business of making an impact. By
+                empowering businesses with innovative technology solutions, we
+                aim to foster growth, create opportunities, and drive economic
                 development across the continent. Join us on our journey to
                 pioneer tech solutions for Africa. Together, we can harness the
                 power of technology to empower businesses, drive innovation, and

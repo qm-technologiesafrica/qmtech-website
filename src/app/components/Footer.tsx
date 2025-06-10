@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-10">
           <div className="flex items-center gap-2">
             <Image
-              src="/QM Footer logo.svg"
+              src="/QM-footer-logo.svg"
               alt="logo"
               width={100}
               height={100}
@@ -111,7 +111,7 @@ const Footer = () => {
           <div className="size-[200px] lg:size-[400px] opacity-10 flex justify-center items-center">
             <div className="flex items-center gap-2 md:scale-[2] lg:scale-[4]">
               <Image
-                src="/QM Footer logo.svg"
+                src="/QM-footer-logo.svg"
                 alt="logo"
                 width={100}
                 height={100}

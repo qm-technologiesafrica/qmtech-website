@@ -2,6 +2,31 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsStarFill } from "react-icons/bs";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1536 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  desktop: {
+    breakpoint: { max: 1536, min: 1024 },
+    items: 3,
+    slidesToSlide: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 2,
+    slidesToSlide: 1,
+  },
+  mobile: {
+    breakpoint: { max: 768, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 
 const Testimonials = [
   {
@@ -47,95 +72,82 @@ const Testimonials = [
 ];
 
 const Testimonial = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const groupSize = 3;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex(
-        (prevIndex) => (prevIndex + groupSize) % Testimonials.length
-      );
-    }, 3000); // change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const currentGroup = [
-    Testimonials[startIndex],
-    Testimonials[(startIndex + 1) % Testimonials.length],
-    Testimonials[(startIndex + 2) % Testimonials.length],
-  ];
-
   return (
     <div
       id="testimonials"
       className="bg-white min-h-[800px] flex flex-col justify-center py-20"
     >
-      <div className=" container space-y-12">
-        <p className=" text-3xl sm:text-4xl md:text-5xl text-center font-semibold text-black">
+      <div className="container space-y-12">
+        <p className="text-3xl sm:text-4xl md:text-5xl text-center font-semibold text-black">
           Testimonial
         </p>
 
-        <p className=" text-lg md:text-2xl text-center">
+        <p className="text-lg md:text-2xl text-center">
           Check out list of amazing products from QM Technologies across africa
         </p>
 
         <div className="flex flex-col items-center gap-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {currentGroup?.map((testimonial, index) => (
-              <div
-                className=" min-h-[335px]  max-w-[400px] shadow-lg shadow-zinc-300 rounded-xl border border-zinc-100 p-6"
-                key={index}
-              >
-                <div className="flex flex-col justify-between gap-6 h-full">
-                  <div className="flex gap-2">
-                    {Array(5)
-                      .fill(0)
-                      .map((_, idx) => (
-                        <BsStarFill
-                          key={idx}
-                          size={24}
-                          color={testimonial.rating > idx ? "orange" : "#ccc"}
-                        />
-                      ))}
-                  </div>
-                  <p className="flex-1 text-lg text-zinc-500">
-                    &ldquo;{testimonial.body}&rdquo;
-                  </p>
-
-                  <div className=" flex gap-6">
-                    <div className=" h-[48px] w-[48px] rounded-full">
-                      <Image
-                        src={testimonial.image}
-                        height={400}
-                        width={400}
-                        alt=""
-                        className=" h-full w-full rounded-full"
-                      />
+          <div className="w-full max-w-7xl">
+            <Carousel
+              swipeable={true}
+              draggable={true}
+              showDots={true}
+              responsive={responsive}
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={3000}
+              keyBoardControl={true}
+              customTransition="transform 300ms ease-in-out"
+              transitionDuration={300}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+              partialVisible={false}
+              centerMode={false}
+            >
+              {Testimonials?.map((testimonial, index) => (
+                <div
+                  className="min-h-[335px] max-w-[400px] mx-auto shadow-lg shadow-zinc-300 rounded-xl border border-zinc-100 p-6 bg-white"
+                  key={index}
+                >
+                  <div className="flex flex-col justify-between gap-6 h-full">
+                    <div className="flex gap-2">
+                      {Array(5)
+                        .fill(0)
+                        .map((_, idx) => (
+                          <BsStarFill
+                            key={idx}
+                            size={24}
+                            color={testimonial.rating > idx ? "orange" : "#ccc"}
+                          />
+                        ))}
                     </div>
-                    <div className="">
-                      <p className=" font-semibold">{testimonial.name}</p>
-                      <p className=" font-light">
-                        {testimonial.position}, {testimonial.company}
-                      </p>
+                    <p className="flex-1 text-lg text-zinc-500">
+                      &ldquo;{testimonial.body}&rdquo;
+                    </p>
+
+                    <div className="flex gap-6">
+                      <div className="h-[48px] w-[48px] rounded-full overflow-hidden">
+                        <Image
+                          src={testimonial.image}
+                          height={400}
+                          width={400}
+                          alt={testimonial.name}
+                          className="h-full w-full rounded-full object-cover"
+                        />
+                      </div>
+                      <div className="">
+                        <p className="font-semibold">{testimonial.name}</p>
+                        <p className="font-light">
+                          {testimonial.position}, {testimonial.company}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className=" gap-4 flex ">
-            {Array(groupSize)
-              .fill(0)
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className={` ${
-                    startIndex == index ? "bg-primary-800" : "bg-zinc-300"
-                  } h-[6px] w-7 rounded-full `}
-                />
               ))}
+            </Carousel>
           </div>
         </div>
       </div>

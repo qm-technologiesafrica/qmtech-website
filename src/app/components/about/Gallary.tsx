@@ -29,7 +29,6 @@ const Gallary = () => {
               <Image
                 className="h-[350px] md:h-[356px] flex-1 w-full  object-cover"
                 src={"/gallery/2.png"}
-                //   srcSet={"/gallery/2.png, /gallery/2@2x.png"}
                 alt="gallery-1"
                 width={400}
                 height={400}

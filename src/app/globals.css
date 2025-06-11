@@ -5,16 +5,73 @@
 @tailwind utilities;
 
 * {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-	font-family: "DM Sans", sans-serif;
-	background: #fff;
-	color: #5a5a5a;
+  font-family: "DM Sans", sans-serif;
+  background: #fff;
+  color: #5a5a5a;
 }
 
 .space {
-	font-family: "Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@layer utilities {
+  .container {
+    @apply w-[92%] m-auto max-w-[1650px];
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.carousel-container {
+  padding: 0 20px;
+  min-height: 400px;
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 20px;
+}
+
+.custom-dot-list-style {
+  margin-top: 20px;
+}
+
+.custom-dot-list-style li {
+  background: #d1d5db;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+}
+
+.custom-dot-list-style li.react-multi-carousel-dot--active {
+  background: #1f2937;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.react-multiple-carousel__arrow {
+  background: rgba(31, 41, 55, 0.8) !important;
+  border-radius: 50% !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  z-index: 10 !important;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: rgba(31, 41, 55, 1) !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
 }

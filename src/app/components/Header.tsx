@@ -11,7 +11,7 @@ import FadeIn from "./FadeIn";
 const navItems = [
   {
     name: "Home",
-    href: "/",
+    href: "/home",
   },
   {
     name: "About us",
@@ -64,7 +64,7 @@ const Header = () => {
   return (
     <>
       {/* <FadeIn> */}
-      <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
+      <header className="sticky top-0 z-50 bg-white backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="h-16 w-16">
@@ -100,7 +100,7 @@ const Header = () => {
 
             <div
               onClick={() => router.push("/contact")}
-              className="bg-primary-900 text-white cursor-pointer px-6 py-3 text-sm rounded-full md:flex hidden items-center gap-2"
+              className="bg-[#1B1B1B] text-white cursor-pointer px-8 py-3 text-sm rounded-full md:flex hidden items-center gap-2"
             >
               Contact us
               <BsArrowRightCircle size={15} color="white" />
@@ -149,7 +149,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.5 }}
               href=""
-              className="mt-4 bg-primary-900 text-white px-6 py-2  rounded-full flex gap-4 items-center"
+              className="mt-4 bg-[#1B1B1B] text-white px-6 py-2  rounded-full flex gap-4 items-center"
               onClick={() => {
                 toggleMenu();
                 router.push("/contact");

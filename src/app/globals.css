@@ -119,3 +119,11 @@ html {
     transform: rotate(360deg);
   }
 }
+
+.hero{
+	background-image: url("/Gallery/hero-bg.png");
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-clip: border-box;
+}

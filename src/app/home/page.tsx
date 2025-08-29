@@ -8,18 +8,23 @@ import OurProducts from "../components/home/OurProducts";
 import Team from "../components/home/Team";
 import Featured from "../components/home/Featured";
 import Testimonial from "../components/home/Testimonial";
+import ContactCta from "../components/home/ContactCta";
+import ContactCtaPaperPay from "../components/home/ContactCtaPaperPay";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <WhoWeAre />
-      <Principles />
+      <ContactCta />
+      <ContactCtaPaperPay />
+
+      {/* <Principles />
       <OurMilestone />
       <OurProducts />
       <Team />
       <Featured />
-      <Testimonial />
+      <Testimonial /> */}
     </>
   );
 }

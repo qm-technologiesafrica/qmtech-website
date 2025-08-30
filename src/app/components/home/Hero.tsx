@@ -39,7 +39,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-[#E4F1FA] px-5">
+    <div
+      id="home"
+      className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-[#E4F1FA] px-5"
+    >
       <div className=" w-full  md:mt-28. container mt-10 mx-auto grid md:grid-cols-2 grid-cols-1 md:px-0 ">
         <div className="w-full flex flex-col items-start" data-aos="fade-right">
           {/* Main Heading */}

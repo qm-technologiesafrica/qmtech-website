@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LayoutContextProvider from "../../contex/LayoutContextProvider";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -20,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative bg-primary-50">
-        <>
+        <LayoutContextProvider>
           <Header />
           {children}
           <Footer />
-        </>
+        </LayoutContextProvider>
       </body>
     </html>
   );

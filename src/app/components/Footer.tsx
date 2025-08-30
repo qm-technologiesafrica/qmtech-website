@@ -16,7 +16,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-zinc-900 min-h-[800px] flex flex-col justify-center pt-20  overflow-x-clip">
+    <footer className="bg-zinc-900 mt-auto min-h-[800px] flex flex-col justify-center pt-20  overflow-x-clip">
       <div className="container space-y-10">
         <div className="grid gap-10" data-aos="fade-up">
           <div className="flex items-center gap-2" data-aos="fade-right">
@@ -31,7 +31,11 @@ const Footer = () => {
           <FooterLinks />
         </div>
 
-        <div className="flex justify-center items-center " data-aos="zoom-in">
+        <div
+          className="flex justify-center items-center "
+
+          // data-aos="zoom-in"
+        >
           <div className="size-[200px] lg:size-[400px] opacity-10 flex justify-center items-center">
             <div className="flex items-center gap-2 md:scale-[2] lg:scale-[4]">
               <Image src="/icons/tm.svg" alt="logo" width={100} height={100} />
@@ -45,7 +49,7 @@ const Footer = () => {
 
         <div
           className="flex justify-center items-center border-t border-white/20 md:py-10 py-5"
-          data-aos="fade-up"
+          // data-aos="fade-up"
         >
           <p className=" text-sm text-center">
             © {new Date().getFullYear()}. QM Technology

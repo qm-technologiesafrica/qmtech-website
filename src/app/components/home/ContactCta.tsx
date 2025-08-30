@@ -15,7 +15,10 @@ export default function ContactCta() {
   }, []);
 
   return (
-    <div className="bg-[#ffffff] min-h-[600px] flex-col flex items-center justify-center">
+    <div
+      id="products"
+      className="bg-[#ffffff] min-h-[600px] flex-col flex items-center justify-center"
+    >
       <div className=" w-full py-8 flex justify-center flex-col items-center">
         <span>Our products</span>
         <span className="text-black font-bold text-3xl md:text-7xl">

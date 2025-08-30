@@ -10,7 +10,10 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <div className="bg-[#ffffff] min-h-[600px] flex items-center justify-center">
+    <div
+      id="who-we-are"
+      className="bg-[#ffffff] min-h-[600px] flex items-center justify-center"
+    >
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div
           className="flex flex-col w-full items-start overflow-hidden rounded-lg justify-start h-[300px] lg:h-full"

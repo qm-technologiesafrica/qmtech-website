@@ -55,6 +55,7 @@ const Testimonials = () => {
 
   return (
     <div
+      id="testimonials"
       className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-white px-5"
       data-aos="fade-up"
     >

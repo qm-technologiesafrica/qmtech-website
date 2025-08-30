@@ -33,6 +33,7 @@ export default function LayoutContextProvider({
       const element = document.getElementById(layout);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
+        setLayout(undefined);
       }
     }
   }, [layout]);

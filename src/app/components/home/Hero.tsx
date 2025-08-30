@@ -5,6 +5,7 @@ import { ArrowDown } from "lucide-react";
 import GlowBorder from "@/app/components/GlowBorder";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useLayoutContext } from "../../../../contex/LayoutContextProvider";
 
 const customers = [
   {
@@ -37,6 +38,8 @@ const Hero = () => {
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
+
+  const { layout, setLayout } = useLayoutContext();
 
   return (
     <div
@@ -102,11 +105,18 @@ const Hero = () => {
           className="flex flex-col items-center space-y-2 cursor-pointer group"
           data-aos="fade-up"
         >
-          <GlowBorder className="size-16 rounded-full bg-primary-800 flex items-center justify-center">
-            <span className="flex items-center justify-center w-full h-full">
-              <ArrowDown className="w-6 h-6 text-white animate-bounce" />
-            </span>
-          </GlowBorder>
+          <button
+            onClick={() => {
+              setLayout("footer");
+            }}
+          >
+            <GlowBorder className="size-16 rounded-full bg-primary-800 flex items-center justify-center">
+              <span className="flex items-center justify-center w-full h-full">
+                <ArrowDown className="w-6 h-6 text-white animate-bounce" />
+              </span>
+            </GlowBorder>
+          </button>
+
           <span className="text-black  font-medium">Scroll down</span>
         </div>
       </div>

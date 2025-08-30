@@ -31,7 +31,7 @@ const WhoWeAre = () => {
         >
           <h2 className="text-black text-base">About us</h2>
           <span className=" text-4xl md:text-7xl font-semibold">
-            <h1 className=" text-black">We're Not Just</h1>
+            <h1 className=" text-black">We&apos;re Not Just</h1>
             <h1 className="text-primary-900 italic"> Building Apps</h1>
           </span>
           <h4 className=" leading-9  ">

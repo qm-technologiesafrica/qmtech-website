@@ -35,12 +35,7 @@ const WhoWeAre = () => {
             <h1 className="text-primary-900 italic"> Building Apps</h1>
           </span>
           <h4 className=" leading-9  ">
-            With a deep understanding of the African tech market, we specialize
-            in developing custom software that addresses the unique challenges
-            and opportunities faced by enterprises in the region. From startups
-            to established companies, our team of skilled developers and tech
-            enthusiasts is committed to delivering solutions that exceed
-            expectations and drive growth.
+            {`With a deep understanding of the African tech market, we specialize in developing custom software that addresses the unique challenges and opportunities faced by enterprises in the region. From startups to established companies, our team of skilled developers and tech enthusiasts is committed to delivering solutions that exceed expectations and drive growth.`}
           </h4>
         </div>
       </div>

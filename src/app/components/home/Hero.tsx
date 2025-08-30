@@ -59,8 +59,8 @@ const Hero = () => {
             </span>
           </h1>
           <p className="  text-gray-700 mb-12 leading-9 max-w-xl">
-            We empower Africa's ecosystem by building technology that solves
-            real problems and drives meaningful change.
+            We empower Africa&apos;s ecosystem by building technology that
+            solves real problems and drives meaningful change.
           </p>
 
           <div className="flex flex-col items-start space-x-4 mb-16">

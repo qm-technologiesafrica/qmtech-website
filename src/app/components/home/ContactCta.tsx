@@ -19,7 +19,8 @@ export default function ContactCta() {
       <div className=" w-full py-8 flex justify-center flex-col items-center">
         <span>Our products</span>
         <span className="text-black font-bold text-3xl md:text-7xl">
-          What We're <span className=" text-primary-900 italic">Building</span>
+          What We&apos;re{" "}
+          <span className=" text-primary-900 italic">Building</span>
         </span>
       </div>
       <div className="container grid ">

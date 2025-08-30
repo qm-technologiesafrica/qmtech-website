@@ -16,7 +16,10 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-zinc-900 mt-auto min-h-[800px] flex flex-col justify-center pt-20  overflow-x-clip">
+    <footer
+      id="footer"
+      className="bg-zinc-900 mt-auto min-h-[800px] flex flex-col justify-center pt-20  overflow-x-clip"
+    >
       <div className="container space-y-10">
         <div className="grid gap-10" data-aos="fade-up">
           <div className="flex items-center gap-2" data-aos="fade-right">

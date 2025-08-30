@@ -17,13 +17,13 @@ export default function ContactCtaPaperPay() {
   return (
     <div className="bg-[#ffffff] min-h-[600px] flex items-center justify-center">
       <div className="container grid ">
-        <section className=" relative bg-white py-24 overflow-hidden ">
-          <img
-            src={"/Gallery/curv.png"}
-            alt="Card Sample"
-            className=" absolute bottom-0 rotate-0"
-          />
-          <div className="relative grid grid-cols-1 md:grid-cols-2 bg-black pt-12 px-5 md:px-24  rounded-3xl hero md:flex-row items-center justify-between gap-8">
+        <section className=" relative bg-white  overflow-hidden ">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 bg-black pt-12 px-5 md:px-24  rounded-3xl  md:flex-row items-center justify-between gap-8">
+            <img
+              src={"/Gallery/curv.png"}
+              alt="Card Sample"
+              className=" absolute bottom-0 right-0 "
+            />
             <div
               className="pt-4 flex items-center justify-center"
               data-aos="fade-left"
@@ -45,13 +45,13 @@ export default function ContactCtaPaperPay() {
                 />
               </div>
             </div>
-            <div className="text-center md:text-left">
-              <div className=" flex w-full md:justify-start justify-center pb-2">
+            <div className="text-center md:text-left pb-6">
+              <div className=" flex w-full md:justify-start justify-center mt-10 relative  pb-2">
                 <Image
-                  src={"/QuizMoney.svg"}
+                  src={"/paperpay.svg"}
                   alt="Quiz Money"
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                   priority
                   className="hover:scale-105 transition-transform duration-500"
                 />
@@ -70,10 +70,8 @@ export default function ContactCtaPaperPay() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-white/80 leading-9 mb-8 max-w-xl"
               >
-                Quiz Money is a trivia-based edtech app that rewards users br
-                for what they know. Licensed by the National Lottery Regulatory
-                Commission (NLRC), our topics include general knowledge,
-                history, science, sports, entertainment, and more
+                Paper Pay is our upcoming payment tool designed for small and
+                medium businesses, helping them get paid faster and easier.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -82,17 +80,16 @@ export default function ContactCtaPaperPay() {
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#E4F1FA] text-[#17478B] px-8 py-4  rounded-full font-medium hover:bg-opacity-90 transition-all"
+                  className="inline-flex relative items-center gap-2 bg-[#ffffff] text-[#17478B] px-8 py-4  rounded-full font-medium hover:bg-opacity-90 transition-all"
                 >
-                  Contact Us
-                  <motion.span
-                    className="relative"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                  >
-                    <i className="bi bi-arrow-right-circle text-base sm:text-lg"></i>
-                    <i className="bi bi-arrow-right-circle absolute left-0 animate-ping opacity-75 text-base sm:text-lg"></i>
-                  </motion.span>
+                  Coming Soon
+                  <Image
+                    src={"/noto-v1_fire.svg"}
+                    alt="Arrow Right"
+                    width={26}
+                    height={26}
+                    className="bi bi-arrow-right-circle animate-pulse left-0  text-base sm:text-lg"
+                  />
                 </Link>
               </motion.div>
             </div>

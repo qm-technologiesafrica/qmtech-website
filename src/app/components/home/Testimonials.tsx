@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
-import GlowBorder from "@/app/components/GlowBorder";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -32,21 +30,41 @@ const customers = [
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
   },
 ];
+const testimonials = [
+  {
+    id: 1,
+    name: "Customer 1",
+    img: "/icons/testimonial-1.svg",
+  },
+  {
+    id: 2,
+    name: "Customer 2",
+    img: "/icons/testimonial-2.svg",
+  },
+  {
+    id: 3,
+    name: "Customer 3",
+    img: "/icons/testimonial-3.svg",
+  },
+];
 
-const Hero = () => {
+const Testimonials = () => {
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
 
   return (
-    <div className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-[#E4F1FA] px-5">
+    <div
+      className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-white px-5"
+      data-aos="fade-up"
+    >
       <div className=" w-full  md:mt-28. container mt-10 mx-auto grid md:grid-cols-2 grid-cols-1 md:px-0 ">
         <div className="w-full flex flex-col items-start" data-aos="fade-right">
           {/* Main Heading */}
           <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Technology, meet{" "}
+            What Our Users{" "}
             <span className="text-primary-800 relative">
-              <span className=" pb-2">solution.</span>
+              <span className=" pb-2">Say.</span>
               <div className="absolute -bottom-2 left-0 w-full pt-16 ">
                 <Image
                   src="/rLine.svg"
@@ -58,10 +76,6 @@ const Hero = () => {
               </div>
             </span>
           </h1>
-          <p className="  text-gray-700 mb-12 leading-9 max-w-xl">
-            We empower Africa's ecosystem by building technology that solves
-            real problems and drives meaningful change.
-          </p>
 
           <div className="flex flex-col items-start space-x-4 mb-16">
             <div className="flex -space-x-3">
@@ -80,35 +94,33 @@ const Hero = () => {
                   />
                 </div>
               ))}
+              <div className="w-12 h-12 items-center justify-center flex flex-row rounded-full border-4 border-white shadow-lg overflow-hidden">
+                100
+              </div>
             </div>
-            <div className="text-gray-700 font-medium">10k+ Customers</div>
           </div>
         </div>
-        <div className=" justify-end hidden md:flex" data-aos="fade-left">
-          <Image
-            src="/mapAfrica.svg"
-            alt="Dotted Map"
-            width={500}
-            height={500}
-            objectFit="contain"
-          />
-        </div>
-      </div>
-      <div className="w-full mt-auto py-5 ">
-        <div
-          className="flex flex-col items-center space-y-2 cursor-pointer group"
-          data-aos="fade-up"
-        >
-          <GlowBorder className="size-16 rounded-full bg-primary-800 flex items-center justify-center">
-            <span className="flex items-center justify-center w-full h-full">
-              <ArrowDown className="w-6 h-6 text-white animate-bounce" />
-            </span>
-          </GlowBorder>
-          <span className="text-black  font-medium">Scroll down</span>
+        <div className="justify-end hidden md:flex flex-col">
+          {testimonials.map((testimonial, idx) => (
+            <div
+              key={testimonial.id}
+              className="flex flex-col items-center w-full"
+              data-aos="fade-left"
+              data-aos-delay={idx * 150}
+            >
+              <Image
+                src={testimonial.img}
+                alt={testimonial.name}
+                width={100}
+                height={60}
+                className="object-contain w-full h-auto"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default Hero;
+export default Testimonials;

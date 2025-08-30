@@ -15,11 +15,17 @@ export default function ContactCta() {
   }, []);
 
   return (
-    <div className="bg-[#ffffff] min-h-[600px] flex items-center justify-center">
+    <div className="bg-[#ffffff] min-h-[600px] flex-col flex items-center justify-center">
+      <div className=" w-full py-8 flex justify-center flex-col items-center">
+        <span>Our products</span>
+        <span className="text-black font-bold text-3xl md:text-7xl">
+          What We're <span className=" text-primary-900 italic">Building</span>
+        </span>
+      </div>
       <div className="container grid ">
-        <section className=" relative bg-white py-24 overflow-hidden ">
-          <div className="relative flex flex-col bg-primary-900 pt-12 px-5 md:px-24  rounded-3xl hero md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left">
+        <section className=" relative bg-white  overflow-hidden ">
+          <div className="relative flex  flex-col bg-primary-900 pt-20 px-5 md:px-24  rounded-3xl hero md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left pb-8">
               <div className=" flex w-full md:justify-start justify-center pb-2">
                 <Image
                   src={"/QuizMoney.svg"}
@@ -58,7 +64,7 @@ export default function ContactCta() {
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-[#E4F1FA] text-[#17478B] px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-all"
                 >
-                  Contact Us
+                  TRY QUIZ MONEY
                   <motion.span
                     className="relative"
                     whileHover={{ x: 5 }}
@@ -72,7 +78,7 @@ export default function ContactCta() {
             </div>
 
             <div
-              className="pt-4 flex items-center justify-center mx-auto md:max-w-[60%] lg:max-w-[40%]"
+              className=" relative md:absolute flex items-center bottom-0 right-0 justify-center mx-auto md:max-w-[60%] lg:max-w-[40%]"
               data-aos="fade-left"
               data-aos-delay="300"
             >
@@ -84,8 +90,8 @@ export default function ContactCta() {
                 <Image
                   src={"/Gallery/hero-phone-mobile.png"}
                   alt="Quiz Money"
-                  width={919}
-                  height={648}
+                  width={700}
+                  height={700}
                   priority
                   className="hover:scale-105 transition-transform duration-500"
                 />

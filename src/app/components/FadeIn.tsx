@@ -9,7 +9,6 @@ type Props = {
 const FadeIn = ({ children, delay }: Props) => {
   return (
     <motion.div
-      variants={fadeInY({ delay })}
       whileInView={"visible"}
       initial={"hidden"}
       viewport={{ once: true, margin: "100% 0px -200px 0px" }}

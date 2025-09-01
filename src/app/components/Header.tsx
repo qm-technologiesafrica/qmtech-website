@@ -8,22 +8,23 @@ import { HiOutlineX, HiOutlineMenu } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
 import FadeIn from "./FadeIn";
+import { useLayoutContext } from "../../../contex/LayoutContextProvider";
 const navItems = [
   {
     name: "Home",
-    href: "/",
+    href: "home",
   },
   {
     name: "About us",
-    href: "/about",
+    href: "who-we-are",
   },
   {
     name: "Products",
-    href: "/#products",
+    href: "products",
   },
   {
     name: "Testimonials",
-    href: "/#testimonials",
+    href: "testimonials",
   },
 ];
 const Header = () => {
@@ -31,40 +32,42 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const router = useRouter();
+  const { layout, setLayout } = useLayoutContext();
 
   // Handle body scroll lock when menu is open and detect scroll
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+  // useEffect(() => {
+  //   if (isMenuOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
 
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 20) {
+  //       setScrolled(true);
+  //     } else {
+  //       setScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    // Initial check
-    handleScroll();
+  //   window.addEventListener("scroll", handleScroll);
+  //   // Initial check
+  //   handleScroll();
 
-    return () => {
-      document.body.style.overflow = "auto";
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isMenuOpen]);
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
     <>
       {/* <FadeIn> */}
-      <header className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
+      <header className="sticky top-0 z-50 bg-white backdrop-blur-md">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex justify-between items-center">
             <div className="h-16 w-16">
@@ -81,8 +84,10 @@ const Header = () => {
             <ul className="hidden md:flex gap-10">
               {navItems.map((item) => (
                 <li key={item.name} className=" flex flex-col items-center">
-                  <Link
-                    href={item.href}
+                  <button
+                    onClick={() => {
+                      setLayout(item.href);
+                    }}
                     className={`${
                       pathname === item.href
                         ? "text-primary-900 text-[20px]"
@@ -90,7 +95,7 @@ const Header = () => {
                     }`}
                   >
                     {item.name}
-                  </Link>
+                  </button>
                   {pathname === item.href && (
                     <div className="w-[80%] h-[2px] bg-primary-900" />
                   )}
@@ -99,8 +104,11 @@ const Header = () => {
             </ul>
 
             <div
-              onClick={() => router.push("/contact")}
-              className="bg-primary-900 text-white cursor-pointer px-6 py-3 text-sm rounded-full md:flex hidden items-center gap-2"
+              onClick={() => {
+                // toggleMenu();
+                // router.push("/contact");
+              }}
+              className="bg-[#1B1B1B] text-white cursor-pointer px-8 py-3 text-sm rounded-full md:flex hidden items-center gap-2"
             >
               Contact us
               <BsArrowRightCircle size={15} color="white" />
@@ -131,17 +139,19 @@ const Header = () => {
         <div className="fixed inset-0 top-[60px] bg-white/70 backdrop-blur-md z-[9990] md:hidden">
           <div className="flex flex-col items-center justify-center h-full gap-8 text-center p-6">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.button
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.1 }}
-                href={item.href}
+                onClick={() => {
+                  setLayout(item.href);
+                  toggleMenu();
+                }}
                 className="text-xl font-medium text-black hover:text-primary-900 transition-colors"
-                onClick={toggleMenu}
                 key={item.name}
               >
                 {item.name}
-              </motion.a>
+              </motion.button>
             ))}
 
             <motion.a
@@ -149,7 +159,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.5 }}
               href=""
-              className="mt-4 bg-primary-900 text-white px-6 py-2  rounded-full flex gap-4 items-center"
+              className="mt-4 bg-[#1B1B1B] text-white px-6 py-2  rounded-full flex gap-4 items-center"
               onClick={() => {
                 toggleMenu();
                 router.push("/contact");

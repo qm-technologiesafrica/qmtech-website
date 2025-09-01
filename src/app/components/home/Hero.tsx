@@ -1,84 +1,126 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import { BsArrowDownCircle } from "react-icons/bs";
-import FadeIn from "../FadeIn";
+import { ArrowDown } from "lucide-react";
+import GlowBorder from "@/app/components/GlowBorder";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useLayoutContext } from "../../../../contex/LayoutContextProvider";
+
+const customers = [
+  {
+    id: 1,
+    name: "Customer 1",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+  },
+  {
+    id: 2,
+    name: "Customer 2",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+  },
+  {
+    id: 3,
+    name: "Customer 3",
+    avatar:
+      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+  },
+  {
+    id: 4,
+    name: "Customer 4",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+  },
+];
+
 const Hero = () => {
+  useEffect(() => {
+    AOS.init({ once: true });
+  }, []);
+
+  const { layout, setLayout } = useLayoutContext();
+
   return (
-    <FadeIn>
-      <div className=" flex flex-col">
-        <div className=" min-h-[500px] bg-primary-50 flex-1 flex flex-col justify-center items-center pt-[100px] pb-[200px]">
-          <div className="container flex flex-col  items-center h-full space-y-5 md:space-y-8">
-            <div className=" bg-white rounded-full px-5 py-2 text-sm text-primary-800 flex gap-2 items-center">
-              <p>Hello There, we are QM Technologies</p>
-              <Image src={"/wave.png"} alt="wave" width={24} height={24} />
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-semibold text-center text-black lg:leading-[90px] ">
-              We Build{" "}
-              <span className="text-primary-800 italic">Technologically</span>{" "}
-              <br className="hidden md:block" /> driven solutions.
-            </h1>
-
-            <p className="text-center text-lg  sm:text-xl md:text-2xl font-light ">
-              Empowering Africa&apos;s ecosystem by providing technologically
-              driven <br className="hidden md:block" />
-              solution to businesses.
-            </p>
-
-            <div className="flex gap-2 bg-white h-[52px] lg:h-[72px] rounded-full p-1 border-2 w-[90%] md:w-[80%] lg:w-[40%] border-primary-800 ">
-              <input
-                type="text"
-                placeholder="Enter Email"
-                className="bg-transparent outline-none flex-1 rounded-full px-5 py-2 text-sm text-primary-800 flex gap-2 items-center"
-              />
-              <div className="bg-primary-900 flex-[.5] md:flex-[.3] text-white rounded-full px-2 md:px-7 py-2 text-sm flex justify-center items-center">
-                Book a call
+    <div
+      id="home"
+      className="min-h-[70svh] w-full grid pt-20 relative  mx-auto bg-[#E4F1FA] px-5"
+    >
+      <div className=" w-full  md:mt-28. container mt-10 mx-auto grid md:grid-cols-2 grid-cols-1 md:px-0 ">
+        <div className="w-full flex flex-col items-start" data-aos="fade-right">
+          {/* Main Heading */}
+          <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
+            Technology, meet{" "}
+            <span className="text-primary-800 relative">
+              <span className=" pb-2">solution.</span>
+              <div className="absolute -bottom-2 left-0 w-full pt-16 ">
+                <Image
+                  src="/rLine.svg"
+                  alt="Underline"
+                  width={150}
+                  height={20}
+                  className="object-contain w-full h-auto"
+                />
               </div>
+            </span>
+          </h1>
+          <p className="  text-gray-700 mb-12 leading-9 max-w-xl">
+            We empower Africa&apos;s ecosystem by building technology that
+            solves real problems and drives meaningful change.
+          </p>
+
+          <div className="flex flex-col items-start space-x-4 mb-16">
+            <div className="flex -space-x-3">
+              {customers.map((customer, index) => (
+                <div
+                  key={customer.id}
+                  className="w-12 h-12 rounded-full border-4 border-white shadow-lg overflow-hidden"
+                  style={{ zIndex: customers.length - index }}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 100}
+                >
+                  <img
+                    src={customer.avatar}
+                    alt={customer.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
+            <div className="text-gray-700 font-medium">10k+ Customers</div>
           </div>
         </div>
-
-        <div className=" flex-[.5] bg-white flex justify-center items-center pb-[100px]">
-          <div className="container flex items-center flex-col">
-            <div className="flex items-center gap-10 w-[80%] ">
-              <div className=" bg-white md:h-[383px] w-full h-[227px] rounded-[20px] translate-y-[-30%] overflow-hidden hidden lg:flex">
-                <Image
-                  src={"/hero-1.png"}
-                  alt="hero-1"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className=" bg-white md:h-[383px] w-full h-[227px] rounded-[20px] translate-y-[-10%] lg:translate-y-[-20%] overflow-hidden  ">
-                <Image
-                  src={"/hero-2.png"}
-                  alt="hero-1"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className=" bg-white md:h-[383px] w-full h-[227px] rounded-[20px] translate-y-[-30%] overflow-hidden hidden lg:flex">
-                <Image
-                  src={"/hero-3.png"}
-                  alt="hero-1"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className=" text-primary-800 flex items-center gap-3">
-              <p className="font-semibold text-lg md:text-2xl">
-                Get to know about QM Technology
-              </p>
-              <BsArrowDownCircle size={22} />
-            </div>
-          </div>
+        <div className=" justify-end hidden md:flex" data-aos="fade-left">
+          <Image
+            src="/mapAfrica.svg"
+            alt="Dotted Map"
+            width={500}
+            height={500}
+            objectFit="contain"
+          />
         </div>
       </div>
-    </FadeIn>
+      <div className="w-full mt-auto py-5 ">
+        <div
+          className="flex flex-col items-center space-y-2 cursor-pointer group"
+          data-aos="fade-up"
+        >
+          <button
+            onClick={() => {
+              setLayout("footer");
+            }}
+          >
+            <GlowBorder className="size-16 rounded-full bg-primary-800 flex items-center justify-center">
+              <span className="flex items-center justify-center w-full h-full">
+                <ArrowDown className="w-6 h-6 text-white animate-bounce" />
+              </span>
+            </GlowBorder>
+          </button>
+
+          <span className="text-black  font-medium">Scroll down</span>
+        </div>
+      </div>
+    </div>
   );
 };
 

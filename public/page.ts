@@ -1,3 +1,3 @@
-import Logo from "./QM logo.svg";
+import Logo from "./logo.svg";
 
 export { Logo };
